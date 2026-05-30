@@ -1,0 +1,31 @@
+//Brootforce approch//
+
+class Solution {
+    public int pivotIndex(int[] nums) {
+           int n= nums.length;
+       for(int i=0; i<=n-1;i++){
+
+             int leftsum=0;
+             int rightsum=0;
+        //  for left sum
+          for(int j=0;j<i;j++){
+
+            leftsum+=nums[j];
+          }  
+        //    for rigth sum
+          for(int j=n-1;j>i;j--){
+
+            rightsum+=nums[j];
+          } 
+
+          if(leftsum==rightsum){
+             return i;
+          }
+       }
+
+       return -1; 
+        
+    }
+        
+    
+}

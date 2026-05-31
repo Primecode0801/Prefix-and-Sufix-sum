@@ -8,7 +8,7 @@ class Solution {
              int leftsum=0;
              int rightsum=0;
         //  for left sum
-          for(int j=0;j<i;j++){
+         for(int j=0;j<i;j++){
 
             leftsum+=nums[j];
           }  

@@ -1,4 +1,4 @@
-//Brootforce approch//
+--------------------------------------------//Brootforce approch//  space complexity: O(1), time complexity:O(N^2)---------------------------------------------
 
 class Solution {
     public int pivotIndex(int[] nums) {
@@ -27,5 +27,64 @@ class Solution {
         
     }
         
-    
 }
+
+
+----------------------------------------//Optimal approch// space complexity: O(1), time complexity: O(N)---------------------------------------------------
+
+class Solution{
+
+   public int pivotIndex(int [] nums){
+
+      int leftsum=0;
+      int totalsum=0;
+      int n=nums.length;
+
+
+      for(int i=0; i<=n-1 ;i++){
+          totalsum+=nums[i];
+      }
+
+      for(int i=0; i<n-1 ;i++){
+
+        int rightsum = totalsum-nums[i]-leftsum;
+
+          if(leftsum==rigthsum){
+           return i;
+          }
+
+         leftsum+=nums[i];
+      }
+
+        return -1;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
